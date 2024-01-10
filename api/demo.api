@@ -1,0 +1,25 @@
+syntax = "v1"
+
+info (
+	title: "api-demo"
+	desc: "api-demo"
+	author: "JK407"
+	email: "1467511770@qq.com"
+)
+
+type (
+	HelloworldReq {
+		Msg string `form:"msg":"msg"`
+	}
+
+	HelloworldResp {
+		Code int    `json:"code"`
+		Msg  string `json:"msg"`
+	}
+)
+
+service api-demo {
+	@handler HelloWorld
+	get /hello (HelloworldReq) returns(HelloworldResp)
+
+}
